@@ -5,6 +5,7 @@ const Navbar = ({brand})=> {
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
        <a className="navbar-brand text-uppercase" href="/">{brand}</a>
+       <a className="navbar-brand text-uppercase" href="/Datos">Datos</a>
       </div>
     </nav>
   )

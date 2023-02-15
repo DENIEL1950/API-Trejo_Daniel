@@ -1,9 +1,11 @@
-import React, {useEffect, useSatate, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Navbar from './components/Navbar'
 import Characters from './components/Characters';
+import { Route, Routes } from 'react-router-dom';
+import Datos from './components/Datos';
 function App() {
 
-  const [characters, setCharacters] = useSatate([]);
+  const [characters, setCharacters] = useState([]);
 
   const initiaUrl = "https://rickandmortyapi.com/api/character";
   
@@ -21,9 +23,17 @@ function App() {
   return ( 
     <>
       <Navbar brand={"Rick and Morty App"} />
-    <div className='container mt-5'>
-      <Characters characters={characters}/>
-    </div>
+
+      <Routes>
+
+        <Route path='/' element={
+          <div className='container mt-5'>
+          <Characters characters={characters}/>
+        </div>} />
+        <Route path='/Datos' element={<Datos />} />
+
+      </Routes>
+
     </>
   );
 }
